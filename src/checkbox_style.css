@@ -1,0 +1,22 @@
+
+/* -表示取消 */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"], .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] {
+    text-decoration: var(--checklist-done-decoration);
+    color: #bd4316;
+}
+
+ul > li.task-list-item[data-task="-"], ul > li.task-list-item[data-task="-"] {
+    text-decoration: var(--checklist-done-decoration);
+    color: #bd4316;
+}
+
+/* x表示完成 */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"], .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] {
+    text-decoration: none;
+    color: #9b5de5;
+}
+
+ul > li.task-list-item[data-task="x"], ul > li.task-list-item[data-task="X"] {
+    text-decoration: none;
+    color: #9b5de5;
+}
