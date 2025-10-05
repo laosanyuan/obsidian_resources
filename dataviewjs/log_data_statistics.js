@@ -49,7 +49,13 @@ async function getDayData(fileName){
 
 // 获取重置列设备
 async function getResetDevices(days){
-	const filePath = dv.page(getPreviewLog(days)).file.path;
+	const tmpFile = dv.page(getPreviewLog(days));
+	if(!tmpFile || !tmpFile.file.path){
+		// 防止文件不存在
+		return '无';
+	}
+
+	const filePath = tmpFile.file.path;
 	const twoDaysAgoContent = await app.vault.readRaw(filePath);
 	const tableContent = getContentUnderHeading(twoDaysAgoContent, 'TikTok账号数据');
 	const rows = parseDeviceTable(tableContent);
@@ -133,5 +139,5 @@ legendPosition: bottom
 \`\`\``);
 }
 
-await displayTodayData(29);
+await displayTodayData(39);
 await displaySomeDaysData(30);
